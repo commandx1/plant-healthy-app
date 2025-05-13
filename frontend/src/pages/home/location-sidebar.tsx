@@ -9,12 +9,16 @@ interface Props {
     onAdd: () => void;
 }
 
-const LocationSidebar = ({ locations, onSelect, onAdd }: Props) => (
+const LocationSidebar = ({ locations, onSelect, onAdd, selectedPlaceId }: Props) => (
     <div className={styles.sidebar}>
         <Typography style={{ marginBottom: 16, fontSize: '1rem' }}>Locations</Typography>
         <Space direction='vertical'>
             {locations.map(loc => (
-                <Typography key={loc._id} className={styles.location} onClick={() => onSelect(loc)}>
+                <Typography
+                    key={loc._id}
+                    style={selectedPlaceId === loc._id ? { color: '#00f' } : { cursor: 'pointer' }}
+                    onClick={() => onSelect(loc)}
+                >
                     {loc.name}
                 </Typography>
             ))}
