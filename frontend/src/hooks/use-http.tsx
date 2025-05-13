@@ -58,7 +58,7 @@ const useHttp = () => {
         if (error.message.includes('Your session has expired')) {
             dispatch({ type: APP_ACTIONS.CLEAR_USER });
             localStorage.removeItem('user_info');
-            navigate('/login');
+            navigate('/');
 
             if (!sessionError) {
                 dispatch({ type: APP_ACTIONS.SESSION_ERROR, payload: error.message });

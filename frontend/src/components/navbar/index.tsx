@@ -35,7 +35,7 @@ const NavBar = () => {
     const handleLogout = () => {
         localStorage.removeItem('user_info');
         dispatch({ type: APP_ACTIONS.CLEAR_USER });
-        navigate('/login');
+        navigate('/');
         setOpen(false);
     };
 

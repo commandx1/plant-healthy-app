@@ -33,13 +33,13 @@ export default function App() {
                 <ScrollToTop />
                 {!user.access_token ? (
                     <Routes>
-                        <Route path='/login' element={<LoginPage />} />
+                        <Route path='/' element={<LoginPage />} />
                         {!user.emailVerified && <Route path='/verify-email' element={<VerifyEmailPage />} />}
                         <Route
                             path='*'
                             element={
                                 <div>
-                                    Page not found. Go to <Link to='/login'>login page</Link>
+                                    Page not found. Go to <Link to='/'>login page</Link>
                                 </div>
                             }
                         />
