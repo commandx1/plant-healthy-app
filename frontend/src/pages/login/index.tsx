@@ -1,15 +1,12 @@
 import styles from './login.module.scss';
 import { FormEvent, useState } from 'react';
-import Button from 'antd/lib/Button';
+import { Button, Card, Input, notification } from 'antd/lib';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
 import { useDispatch } from 'react-redux';
 import { APP_ACTIONS } from 'store';
 import { useNavigate } from 'react-router-dom';
 import useHttp from 'hooks/use-http';
-import notification from 'antd/lib/notification';
-import Card from 'antd/lib/Card';
-import Input from 'antd/lib/Input';
 import zxcvbn from 'zxcvbn';
 import { BiEnvelope } from 'react-icons/bi';
 import { BsPerson } from 'react-icons/bs';

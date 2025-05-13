@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { APP_ACTIONS } from 'store';
 import useHttp from './use-http';
-import notification from 'antd/lib/notification';
+import { notification } from 'antd/lib';
 
 const useAccessToken = () => {
     const sessionError = useSelector((state: { sessionError: string }) => state.sessionError);
