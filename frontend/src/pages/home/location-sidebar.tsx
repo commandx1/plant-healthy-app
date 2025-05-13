@@ -11,7 +11,7 @@ interface Props {
 
 const LocationSidebar = ({ locations, onSelect, onAdd }: Props) => (
     <div className={styles.sidebar}>
-        <Typography>Locations</Typography>
+        <Typography style={{ marginBottom: 16, fontSize: '1rem' }}>Locations</Typography>
         <Space direction='vertical'>
             {locations.map(loc => (
                 <Typography key={loc._id} className={styles.location} onClick={() => onSelect(loc)}>
