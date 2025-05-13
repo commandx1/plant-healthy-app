@@ -1,0 +1,64 @@
+.addLocation {
+  background: #4AC29A;
+  background: -webkit-linear-gradient(to right, #BDFFF3, #4AC29A);
+  background: linear-gradient(to right, #BDFFF3, #4AC29A);
+  display: grid;
+  place-items: center;
+  height: 100%;
+  text-transform: uppercase;
+  color: var(--mainColor);
+  font-weight: 600;
+  cursor: pointer;
+
+  &>div {
+    width: 100%;
+    height: 100%;
+    padding: 2rem 0;
+    display: grid;
+    place-items: center;
+
+    &>div {
+      display: grid;
+      place-items: center;
+    }
+  }
+
+  :global(.ant-card) {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+div:has(.addLocation) {
+  height: 100%;
+}
+
+.homeContent {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+
+  .sidebar {
+    .space{
+      margin-top: 1rem;
+      text-transform: capitalize;
+      
+      :global(.ant-space-item) {
+        cursor: pointer;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .plantCard {
+    flex: 1;
+    overflow: hidden;
+
+    .header {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+  }
+}

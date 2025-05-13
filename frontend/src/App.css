@@ -1,0 +1,31 @@
+@import 'nprogress/nprogress.css';
+
+#nprogress {
+  position: fixed;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+
+#nprogress .bar {
+  background-color: var(--mainColor);
+}
+
+#nprogress .spinner .spinner-icon {
+  border-top-color: var(--mainColor);
+  border-left-color: var(--mainColor);
+}
+
+.appMain {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: #F9FAFB;
+}
+
+.appMain .appContent {
+  flex: 1;
+}

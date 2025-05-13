@@ -1,0 +1,234 @@
+.loginPage {
+  min-height: 100vh;
+  padding: 2rem 0;
+  display: grid;
+  place-items: center;
+
+  .card {
+    width: 100%;
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, .1));
+
+    :global(.ant-card-body) {
+      display: flex;
+      overflow: hidden auto;
+      margin: -24px;
+
+      .left {
+        width: 50%;
+        position: relative;
+        background: rgb(25, 56, 21);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+        color: #fff;
+        padding: 2rem;
+        transition: .5s;
+        z-index: 2;
+
+        h3 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #e3eeff;
+        }
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          object-fit: cover;
+          mix-blend-mode: overlay;
+          opacity: .4;
+        }
+      }
+
+      .right {
+        width: 50%;
+        height: 100%;
+        padding: 1rem 0.5rem;
+        display: grid;
+        place-items: center;
+        transition: .5s;
+
+        &>div {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          width: 70%;
+
+          h3 {
+            font-size: 2rem;
+            color: var(--black);
+
+            &+p {
+              color: var(--gray);
+              font-size: 1.25rem;
+              margin-bottom: 2rem;
+            }
+          }
+
+          .formItem {
+            margin-bottom: 2rem;
+            width: 100%;
+            cursor: text;
+
+            label {
+              display: block;
+              margin-bottom: .25rem;
+            }
+          }
+
+          .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: -1rem 0 1rem;
+          }
+
+          .continue {
+            position: relative;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--gray);
+            margin: 2rem 0;
+
+            &::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: 50%;
+              width: 30%;
+              height: 1px;
+              background-color: var(--borderGray);
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              top: 50%;
+              width: 30%;
+              height: 1px;
+              background-color: var(--borderGray);
+            }
+          }
+
+          .changeMode {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            margin-top: 1rem;
+
+            p {
+              font-size: 1rem;
+              color: var(--gray);
+
+              &:last-child {
+                color: var(--mainColor);
+                cursor: pointer;
+              }
+            }
+          }
+        }
+      }
+
+      @media (max-width:1000px) {
+        flex-direction: column;
+
+        .left {
+          width: 100%;
+
+          h3 {
+            font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+
+            &+p {
+              font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
+            }
+          }
+        }
+
+        .right {
+          width: 100%;
+          padding: 2rem 0;
+
+          &>div {
+            width: 90%;
+
+            h3 {
+              font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+              margin-bottom: 0.5rem;
+
+              &+p {
+                font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
+                margin-bottom: 2rem;
+              }
+            }
+
+            .formItem {
+              margin-bottom: 1rem;
+
+              label {
+                margin-bottom: .5rem;
+              }
+
+              .input {
+                padding: .5rem;
+                gap: .5rem;
+
+                input {
+                  font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
+                }
+              }
+            }
+
+            .actions {
+              margin: .75rem 0;
+              font-size: clamp(0.5rem, 2vw + 0.2rem, 1rem);
+
+              :global(.MuiTypography-root) {
+                font-size: clamp(0.5rem, 2vw + 0.2rem, 1rem);
+              }
+            }
+
+            button {
+              padding-top: .5rem;
+              padding-bottom: .5rem;
+              font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
+            }
+
+            .continue {
+              font-size: clamp(1rem, 2vw + 0.1rem, 2rem);
+              margin: 1rem 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.loginPage.registerMode {
+  .left {
+    transform: translateX(100%);
+  }
+
+  .right {
+    transform: translateX(-100%);
+  }
+
+  @media (max-width:1000px) {
+    .left {
+      transform: translateX(0%);
+    }
+
+    .right {
+      transform: translateY(0%);
+    }
+  }
+}

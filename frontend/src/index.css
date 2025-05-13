@@ -1,0 +1,37 @@
+:root {
+  --black: #1f2937;
+  --mainColor: #047857;
+  --lightMainColor: hsl(163, 94%, 74%);
+  --gray: #4b5563;
+  --placeholderGray: #adaebc;
+  --borderGray: #e5e7eb;
+  --textGray: #9ca3af;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #F9FAFB;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+a {
+  text-decoration: none;
+}

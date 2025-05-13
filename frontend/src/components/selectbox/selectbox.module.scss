@@ -1,0 +1,78 @@
+.select {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    font-family: sans-serif;
+}
+
+.trigger {
+    padding: 8px 25px 8px 10px;
+    background-color: #fff;
+    border: 1px solid var(--borderGray);
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 11;
+    transition: .5s;
+
+    .arrow {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform-origin: center;
+        transition: transform 0.5s;
+    }
+
+    .arrow.down {
+        transform: translateY(-50%);
+    }
+
+    .arrow.up {
+        transform: translateY(-50%) rotate(-180deg);
+    }
+}
+
+.trigger.open {
+    border-radius: 8px 8px 0 0;
+}
+
+.options {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid var(--borderGray);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 10;
+
+    pointer-events: none;
+    opacity: 0;
+    top: 70%;
+    transition: 0.5s;
+
+    .option {
+        padding: 10px 14px;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+
+    .option.selected {
+        background-color: hsl(243, 75%, 95%);
+        font-weight: bold;
+    }
+}
+
+.options.open {
+    opacity: 1;
+    pointer-events: visible;
+    top: 100%;
+}
